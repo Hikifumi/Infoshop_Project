@@ -1,16 +1,22 @@
 package infoshop_project;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 public class FXML3EditController implements Initializable {
     ItemList data;
@@ -48,6 +54,30 @@ public class FXML3EditController implements Initializable {
     
     @FXML
     private TextField tfIndex;
+    
+    @FXML
+    private void exitButtonAction(ActionEvent event) throws IOException {
+        Parent scene2 = FXMLLoader.load(getClass().getResource("FXML4Exit.fxml"));
+        Scene scene = new Scene(scene2);
+        
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Exit");
+        stage.show();
+        System.out.println("Exit");
+    }
+    
+    @FXML
+    private void incomeButtonAction(ActionEvent event) throws IOException {
+        Parent scene2 = FXMLLoader.load(getClass().getResource("FXML5Income.fxml"));
+        Scene scene = new Scene(scene2);
+        
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Income Table");
+        stage.show();
+        System.out.println("Penghasilan");
+    }
     
     @FXML
     private void addtoshelfButton(ActionEvent event){

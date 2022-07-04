@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
+ */
 package infoshop_project;
 
 import java.io.IOException;
@@ -12,22 +16,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class FXML4ExitController implements Initializable {
-
-    @FXML
-    private void yesButtonAction(ActionEvent event) throws IOException {
-        Parent scene2 = FXMLLoader.load(getClass().getResource("FXML1Main.fxml"));
-        Scene scene = new Scene(scene2);
-        
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.setTitle("Main Page");
-        stage.show();
-        System.out.println("Exit to main menu");
-    }
+/**
+ * FXML Controller class
+ *
+ * @author TUF-GK
+ */
+public class FXML5IncomeController implements Initializable {
     
     @FXML
-    private void noButtonAction(ActionEvent event) throws IOException {
+    private void backButtonAction(ActionEvent event) throws IOException {
         Parent scene2 = FXMLLoader.load(getClass().getResource("FXML3Edit.fxml"));
         Scene scene = new Scene(scene2);
         

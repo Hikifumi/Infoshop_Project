@@ -27,7 +27,7 @@
           <TableColumn fx:id="tcName" prefWidth="263.20001220703125" text="Name" />
           <TableColumn fx:id="tcStock" minWidth="0.0" prefWidth="40.800018310546875" text="Stock" />
             <TableColumn fx:id="tcType" prefWidth="129.066650390625" text="Type" />
-            <TableColumn fx:id="tcPrice" prefWidth="146.13323974609375" text="Price" />
+            <TableColumn fx:id="tcPrice" prefWidth="143.1999389648438" text="Price" />
         </columns>
       </TableView>
       <TextField fx:id="tfName" layoutX="17.0" layoutY="113.0" prefHeight="37.0" prefWidth="303.0" promptText="Goods Name">
@@ -70,12 +70,7 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <Button layoutX="52.0" layoutY="515.0" mnemonicParsing="false" style="-fx-background-color: ffecec;" text="Table">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
-      <Button layoutX="118.0" layoutY="515.0" mnemonicParsing="false" style="-fx-background-color: ffecec;" text="Chart">
+      <Button layoutX="17.0" layoutY="515.0" mnemonicParsing="false" onAction="#incomeButtonAction" style="-fx-background-color: ffecec;" text="Income">
          <font>
             <Font size="16.0" />
          </font>
@@ -110,7 +105,7 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <Button mnemonicParsing="false" style="-fx-background-color: ffecec;" text="Exit" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#exitButtonAction" style="-fx-background-color: ffecec;" text="Exit" />
       <Button layoutX="272.0" layoutY="365.0" mnemonicParsing="false" style="-fx-background-color: ffecec;" text="Load">
          <font>
             <Font size="16.0" />

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="580.0" prefWidth="960.0" style="-fx-background-color: ffbbbb;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="infoshop_project.FXML5IncomeController">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="402.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/Logo%20Infoshop.jpeg" />
+         </image>
+      </ImageView>
+      <TableView layoutX="62.0" layoutY="155.0" prefHeight="394.0" prefWidth="844.0">
+        <columns>
+          <TableColumn prefWidth="469.5999641418457" text="Product" />
+          <TableColumn prefWidth="100.800048828125" text="Sold" />
+            <TableColumn minWidth="0.0" prefWidth="96.0" text="Available" />
+            <TableColumn prefWidth="88.7999267578125" text="First Amount" />
+            <TableColumn prefWidth="87.199951171875" text="Percentage" />
+        </columns>
+      </TableView>
+      <Button layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#backButtonAction" prefHeight="26.0" prefWidth="45.0" style="-fx-background-color: ffecec;" text="Back" />
+      <Button layoutX="901.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: ffecec;" text="Chart" />
+      <Label layoutX="62.0" layoutY="125.0" text="Income Data">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
