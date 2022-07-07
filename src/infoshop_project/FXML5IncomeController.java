@@ -35,6 +35,18 @@ public class FXML5IncomeController implements Initializable {
         System.out.println("Back to Table");
     }
     
+    @FXML
+    private void ChartButtonAction(ActionEvent event) throws IOException {
+        Parent scene2 = FXMLLoader.load(getClass().getResource("FXML6Chart.fxml"));
+        Scene scene = new Scene(scene2);
+        
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Chart");
+        stage.show();
+        System.out.println("Chart");
+    }
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

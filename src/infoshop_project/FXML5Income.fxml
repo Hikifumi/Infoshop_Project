@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="580.0" prefWidth="960.0" style="-fx-background-color: ffbbbb;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="infoshop_project.FXML5IncomeController">
+<AnchorPane id="AnchorPane" prefHeight="580.0" prefWidth="960.0" style="-fx-background-color: ffbbbb;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="infoshop_project.FXML5IncomeController">
    <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="402.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -27,7 +26,7 @@
         </columns>
       </TableView>
       <Button layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#backButtonAction" prefHeight="26.0" prefWidth="45.0" style="-fx-background-color: ffecec;" text="Back" />
-      <Button layoutX="901.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: ffecec;" text="Chart" />
+      <Button layoutX="901.0" layoutY="14.0" mnemonicParsing="false" onAction="#ChartButtonAction" style="-fx-background-color: ffecec;" text="Chart" />
       <Label layoutX="62.0" layoutY="125.0" text="Income Data">
          <font>
             <Font size="18.0" />
