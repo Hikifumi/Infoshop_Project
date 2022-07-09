@@ -18,7 +18,7 @@
             <Image url="@image/Logo%20Infoshop.jpeg" />
          </image>
       </ImageView>
-      <Button layoutX="14.0" layoutY="13.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="45.0" style="-fx-background-color: ffecec;" text="Back" />
+      <Button layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#backButtonAction" prefHeight="26.0" prefWidth="45.0" style="-fx-background-color: ffecec;" text="Back" />
       <Label layoutX="62.0" layoutY="125.0" text="Income Data">
          <font>
             <Font size="18.0" />

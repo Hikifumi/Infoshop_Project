@@ -22,7 +22,7 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <TableView fx:id="tvMerch" layoutX="351.0" layoutY="46.0" prefHeight="506.0" prefWidth="579.0">
+      <TableView fx:id="tvMerch" layoutX="351.0" layoutY="46.0" prefHeight="506.0" prefWidth="579.0" style="-fx-background-color: white;">
         <columns>
           <TableColumn fx:id="tcName" prefWidth="263.20001220703125" text="Name" />
           <TableColumn fx:id="tcStock" minWidth="0.0" prefWidth="40.800018310546875" text="Stock" />
@@ -30,22 +30,22 @@
             <TableColumn fx:id="tcPrice" prefWidth="143.1999389648438" text="Price" />
         </columns>
       </TableView>
-      <TextField fx:id="tfName" layoutX="17.0" layoutY="113.0" prefHeight="37.0" prefWidth="303.0" promptText="Goods Name">
+      <TextField fx:id="tfName" layoutX="17.0" layoutY="113.0" prefHeight="37.0" prefWidth="303.0" style="-fx-background-color: fbdcdc;">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="tfType" layoutX="17.0" layoutY="178.0" prefHeight="37.0" prefWidth="303.0" promptText="Type">
+      <TextField fx:id="tfType" layoutX="17.0" layoutY="178.0" prefHeight="37.0" prefWidth="303.0" style="-fx-background-color: fbdcdc;">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="tfStock" layoutX="17.0" layoutY="243.0" prefHeight="38.0" prefWidth="59.0" promptText="Stock">
+      <TextField fx:id="tfStock" layoutX="17.0" layoutY="243.0" prefHeight="38.0" prefWidth="59.0" style="-fx-background-color: fbdcdc;">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField fx:id="tfPrice" layoutX="86.0" layoutY="243.0" prefHeight="38.0" prefWidth="233.0" promptText="Price">
+      <TextField fx:id="tfPrice" layoutX="86.0" layoutY="243.0" prefHeight="38.0" prefWidth="233.0" style="-fx-background-color: fbdcdc;">
          <font>
             <Font size="16.0" />
          </font>
@@ -55,17 +55,12 @@
             <Font size="16.0" />
          </font>
       </Button>
-      <TextField fx:id="tfIndex" layoutX="17.0" layoutY="364.0" prefHeight="38.0" prefWidth="59.0" promptText="Index">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </TextField>
-      <Button layoutX="86.0" layoutY="365.0" mnemonicParsing="false" style="-fx-background-color: ffecec;" text="Edit">
+      <Button layoutX="86.0" layoutY="365.0" mnemonicParsing="false" onAction="#editButtonAction" style="-fx-background-color: ffecec;" text="Edit">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button layoutX="139.0" layoutY="365.0" mnemonicParsing="false" style="-fx-background-color: ffecec;" text="Delete">
+      <Button layoutX="139.0" layoutY="365.0" mnemonicParsing="false" onAction="#deleteButtonAction" style="-fx-background-color: ffecec;" text="Delete">
          <font>
             <Font size="16.0" />
          </font>
@@ -95,21 +90,11 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="17.0" layoutY="336.0" text="Index:">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Button layoutX="212.0" layoutY="365.0" mnemonicParsing="false" style="-fx-background-color: ffecec;" text="Save">
+      <Button layoutX="212.0" layoutY="365.0" mnemonicParsing="false" onAction="#saveButtonAction" style="-fx-background-color: ffecec;" text="Save">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
       <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#exitButtonAction" style="-fx-background-color: ffecec;" text="Exit" />
-      <Button layoutX="272.0" layoutY="365.0" mnemonicParsing="false" style="-fx-background-color: ffecec;" text="Load">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Button>
    </children>
 </AnchorPane>
