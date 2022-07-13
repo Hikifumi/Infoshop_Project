@@ -7,9 +7,11 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
 import static javafx.collections.FXCollections.observableArrayList;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,52 +21,166 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class FXML3EditController implements Initializable {
     XStream xstream = new XStream(new StaxDriver());
-    ItemList data;
+    ObservableList<Item> data = FXCollections.observableArrayList();
+    Item item = new Item();
+    ItemList dataa;
     ArrayList<Item> ListItem = new ArrayList<Item>();
     ObservableList<Item> observableListItem = observableArrayList();
 //    ArrayList<Item> ListItem = new ArrayList<Item>();
     
-    @FXML
-    private Label lSeller;
+    @FXML private Label lSeller;
+    
+    @FXML private TableView<Item> tvMerch;
+    
+    @FXML private TableColumn<Item, String> tcName;
+    @FXML private TableColumn<Item, Integer> tcStock;
+    @FXML private TableColumn<Item, String> tcType;
+    @FXML private TableColumn<Item, Integer> tcPrice;
+    
+    @FXML private TextField tfName;
+    @FXML private TextField tfStock;
+    @FXML private TextField tfType;
+    @FXML private TextField tfPrice;
+    
+    @FXML private Button Badd;
+    @FXML private Button Bedit;
+    @FXML private Button Bdelete;
+    @FXML private Button Bincome;
+    
+    void OpenXML() {
+        FileInputStream cobi = null;
+        try {
+            cobi = new FileInputStream("barang.xml");
+            int isi;
+            char charnya;
+            String stringnya;
+            stringnya ="";
+            
+            while ((isi = cobi.read()) != -1) {
+                charnya= (char) isi;
+                stringnya = stringnya + charnya;
+            }
+            data =  (ObservableList) xstream.fromXML(stringnya);
+        }
+        catch (Exception e){
+            System.err.println("test: "+e.getMessage());
+        }
+        finally{
+            if(cobi != null){
+                try{
+                    cobi.close();
+                }catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        } 
+    }
+
+    void SaveXML() {
+        String xml = xstream.toXML(data);
+        FileOutputStream coba = null;
+        try {
+            coba = new FileOutputStream("barang.xml");
+            byte[] bytes = xml.getBytes("UTF-8");
+            coba.write(bytes);
+            coba.close();
+            System.out.println("Data Berhasil Disimpan");
+
+        }catch (Exception e) {
+            e.printStackTrace();
+        } 
+    }
     
     @FXML
-    private TableView<Item> tvMerch;
+    private void addtoshelfButton(ActionEvent event){
+        String name = tfName.getText();
+        String stock = tfStock.getText();
+        String type = tfType.getText();
+        String price = tfPrice.getText();
+        int stock2 = Integer.parseInt(stock);
+        int price2 = Integer.parseInt(price);
+        
+        data.add(new Item(name, stock2, type, price2));
+        
+        tfName.setText("");
+        tfStock.setText("");
+        tfType.setText("");
+        tfPrice.setText("");
+        
+        SaveXML();
+    }
     
     @FXML
-    private TableColumn<Item, String> tcName;
+    void tableClick(MouseEvent event) throws ParseException{
+        Item clickedItem = (Item) tvMerch.getSelectionModel().getSelectedItem();
+        tfName.setText(String.valueOf(clickedItem.getName()));
+        tfStock.setText(String.valueOf(clickedItem.getStock()));
+        tfType.setText(String.valueOf(clickedItem.getType()));
+        tfPrice.setText(String.valueOf(clickedItem.getPrice()));
+    }
     
     @FXML
-    private TableColumn<Item, Integer> tcStock;
+    private void editButtonAction(ActionEvent event) {
+        String name = tfName.getText();
+        String stock = tfStock.getText();
+        String type = tfType.getText();
+        String price = tfPrice.getText();
+        int stock2 = Integer.parseInt(stock);
+        int price2 = Integer.parseInt(price);
+        
+        int pick = tvMerch.getSelectionModel().getSelectedIndex();
+        if (pick >= 0){
+            tvMerch.getItems().remove(pick);
+            tvMerch.getItems().add(pick,new Item(name, stock2, type, price2));
+        }
+        
+        tfName.setText("");
+        tfStock.setText("");
+        tfType.setText("");
+        tfPrice.setText("");
+        
+        SaveXML();
+    }
     
     @FXML
-    private TableColumn<Item, String> tcType;
+    private void clearButtonAction(ActionEvent event) {
+        tfName.setText("");
+        tfStock.setText("");
+        tfType.setText("");
+        tfPrice.setText("");
+    }
     
     @FXML
-    private TableColumn<Item, Integer> tcPrice;
+    private void deleteButtonAction(ActionEvent event) {
+        int pick = tvMerch.getSelectionModel().getSelectedIndex();
+        if (pick >= 0){
+            tvMerch.getItems().remove(pick);
+        }
+        SaveXML();
+    }
     
     @FXML
-    private TextField tfName;
-    
-    @FXML
-    private TextField tfStock;
-    
-    @FXML
-    private TextField tfType;
-    
-    @FXML
-    private TextField tfPrice;
-    
-    @FXML
-    private TextField tfIndex;
+    private void incomeButtonAction(ActionEvent event) throws IOException {
+        Parent scene2 = FXMLLoader.load(getClass().getResource("FXML6Chart.fxml"));
+        Scene scene = new Scene(scene2);
+        
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.setTitle("Income Chart");
+        stage.show();
+        System.out.println("Charrt Penghasilan");
+    }
     
     @FXML
     private void exitButtonAction(ActionEvent event) throws IOException {
@@ -78,145 +194,21 @@ public class FXML3EditController implements Initializable {
         System.out.println("Exit");
     }
     
-    @FXML
-    private void incomeButtonAction(ActionEvent event) throws IOException {
-        Parent scene2 = FXMLLoader.load(getClass().getResource("FXML5Income.fxml"));
-        Scene scene = new Scene(scene2);
-        
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.setTitle("Income Table");
-        stage.show();
-        System.out.println("Penghasilan");
-    }
-    
-    @FXML
-    private void addtoshelfButton(ActionEvent event){
-        String name = tfName.getText();
-        String stock = tfStock.getText();
-        String type = tfType.getText();
-        String price = tfPrice.getText();
-        int stock2 = Integer.parseInt(stock);
-        int price2 = Integer.parseInt(price);
-        data.setData(name, stock2, type, price2);
-        tvMerch.setItems(data.getData());
-        System.out.println("Barang telah ditambahkan");
-        
-        tfName.setText("");
-        tfStock.setText("");
-        tfType.setText("");
-        tfPrice.setText("");
-        
-        Item dataBarang = new Item(name, stock2, type, price2);
-        ListItem.add(dataBarang);
-    }
-    
     public void getData(String d){
-        lSeller.setText("Hi, " + d + "! Sehat po?");
+        lSeller.setText("Hi, " + d + "! How are you?");
         System.out.println("getData method is Invoked");
-    }
-    
-    @FXML
-    private void saveButtonAction(ActionEvent event) {
-        File f = new File("dataBarang.xml");
-        if (f.exists() && !f.isDirectory()) {
-            System.out.println("file nya adaaa");
-            OpenXml();
-        }
-
-        SaveAndCreate();
-        System.out.println("Bismillah Save");
-    }
-    
-    @FXML
-    private void deleteButtonAction(ActionEvent event) {
-        int selected = tvMerch.getSelectionModel().getSelectedIndex();
-        tvMerch.getItems().remove(selected);
-    }
-    
-    @FXML
-    private void editButtonAction(ActionEvent event) {
-        
-    }
-    
-    void OpenXml() {
-        FileInputStream inputDoc;
-
-        try {
-            inputDoc = new FileInputStream("dataBarang.xml");
-            int content;
-            char c;
-            String s = "";
-            while ((content = inputDoc.read()) != -1) {
-                c = (char) content;
-                s += c;
-            }
-
-            ListItem = (ArrayList<Item>) xstream.fromXML(s);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-    }
-
-    void SaveAndCreate() {
-        FileOutputStream outputDoc;
-        String xml = xstream.toXML(ListItem);
-        File f = new File("dataBarang.xml");
-        try {
-            byte[] data = xml.getBytes();
-            outputDoc = new FileOutputStream("dataBarang.xml");
-            outputDoc.write(data);
-            outputDoc.close();
-            System.out.println("add data success");
-        } catch (Exception error) {
-            System.err.println("An error occur: " + error.getMessage());
-        }
-    }
-    
-    void OpenData() {
-        XStream xStream = new XStream(new StaxDriver());
-        FileInputStream berkasMasuk;
-
-        try {
-            berkasMasuk = new FileInputStream("dataBarang.xml");
-            int isi;
-            char c;
-            String s = "";
-            while ((isi = berkasMasuk.read()) != -1) {
-
-                c = (char) isi;
-                s = s + c;
-
-            }
-
-            ListItem = (ArrayList<Item>) xstream.fromXML(s);
-            berkasMasuk.close();
-        } catch (Exception e) {
-            System.out.println("terjadi kesalahan");
-        }
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        OpenXML();
+        
         tcName.setCellValueFactory(new PropertyValueFactory<>("name"));
         tcStock.setCellValueFactory(new PropertyValueFactory<>("stock"));
         tcType.setCellValueFactory(new PropertyValueFactory<>("type"));
         tcPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
         
-        data = new ItemList();
-//        data.setDummy();
-        tvMerch.setItems(data.getData());
-        
-        File f = new File("dataBarang.xml");
-        if (f.exists() && !f.isDirectory()) {
-            OpenData();
-            for (int i = 0; i < ListItem.size(); i++) {
-                observableListItem.add(ListItem.get(i));
-            }
-
-        }
-
-        tvMerch.setItems(observableListItem);
+        tvMerch.setItems(data);
     }    
     
 }

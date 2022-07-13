@@ -9,15 +9,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="580.0" prefWidth="960.0" style="-fx-background-color: ffbbbb;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="infoshop_project.FXML2LoginController">
+<AnchorPane id="AnchorPane" prefHeight="580.0" prefWidth="960.0" style="-fx-background-color: ffbbbb;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="infoshop_project.FXML2LoginController">
    <children>
       <ImageView fitHeight="500.0" fitWidth="500.0" layoutX="10.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@image/Logo%20Infoshop.jpeg" />
          </image>
       </ImageView>
-      <Label layoutX="618.0" layoutY="191.0" text="Login Mazz ee">
+      <Label layoutX="604.0" layoutY="191.0" text="Please Login First">
          <font>
             <Font size="22.0" />
          </font>
@@ -27,7 +26,7 @@
             <Font size="22.0" />
          </font>
       </TextField>
-      <PasswordField layoutX="553.0" layoutY="310.0" promptText="Password" style="-fx-background-color: ffecec;">
+      <PasswordField fx:id="pfPw" layoutX="552.0" layoutY="299.0" promptText="Password" style="-fx-background-color: ffecec;">
          <font>
             <Font size="22.0" />
          </font>
@@ -37,5 +36,6 @@
             <Font size="18.0" />
          </font>
       </Button>
+      <Label fx:id="label1" layoutX="552.0" layoutY="353.0" textFill="RED" />
    </children>
 </AnchorPane>

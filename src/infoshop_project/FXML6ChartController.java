@@ -29,14 +29,14 @@ public class FXML6ChartController implements Initializable {
     
     @FXML
     private void backButtonAction(ActionEvent event) throws IOException {
-        Parent scene2 = FXMLLoader.load(getClass().getResource("FXML5Income.fxml"));
+        Parent scene2 = FXMLLoader.load(getClass().getResource("FXML3Edit.fxml"));
         Scene scene = new Scene(scene2);
         
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
-        stage.setTitle("Income Table");
+        stage.setTitle("Merchandise Table");
         stage.show();
-        System.out.println("Penghasilan");
+        System.out.println("Back to Table");
     }
     
     @Override
