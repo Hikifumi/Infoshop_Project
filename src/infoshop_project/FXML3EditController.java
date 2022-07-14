@@ -22,6 +22,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -34,10 +35,6 @@ public class FXML3EditController implements Initializable {
     XStream xstream = new XStream(new StaxDriver());
     ObservableList<Item> data = FXCollections.observableArrayList();
     Item item = new Item();
-    ItemList dataa;
-    ArrayList<Item> ListItem = new ArrayList<Item>();
-    ObservableList<Item> observableListItem = observableArrayList();
-//    ArrayList<Item> ListItem = new ArrayList<Item>();
     
     @FXML private Label lSeller;
     
@@ -52,6 +49,8 @@ public class FXML3EditController implements Initializable {
     @FXML private TextField tfStock;
     @FXML private TextField tfType;
     @FXML private TextField tfPrice;
+    
+    @FXML private ChoiceBox cbExpedition;
     
     @FXML private Button Badd;
     @FXML private Button Bedit;
@@ -106,7 +105,7 @@ public class FXML3EditController implements Initializable {
     private void addtoshelfButton(ActionEvent event){
         String name = tfName.getText();
         String stock = tfStock.getText();
-        String type = tfType.getText();
+        String type = (String) cbExpedition.getValue();
         String price = tfPrice.getText();
         int stock2 = Integer.parseInt(stock);
         int price2 = Integer.parseInt(price);
@@ -115,7 +114,7 @@ public class FXML3EditController implements Initializable {
         
         tfName.setText("");
         tfStock.setText("");
-        tfType.setText("");
+        cbExpedition.setValue("External Expedition");
         tfPrice.setText("");
         
         SaveXML();
@@ -126,7 +125,7 @@ public class FXML3EditController implements Initializable {
         Item clickedItem = (Item) tvMerch.getSelectionModel().getSelectedItem();
         tfName.setText(String.valueOf(clickedItem.getName()));
         tfStock.setText(String.valueOf(clickedItem.getStock()));
-        tfType.setText(String.valueOf(clickedItem.getType()));
+        cbExpedition.setValue(String.valueOf(clickedItem.getType()));
         tfPrice.setText(String.valueOf(clickedItem.getPrice()));
     }
     
@@ -134,7 +133,7 @@ public class FXML3EditController implements Initializable {
     private void editButtonAction(ActionEvent event) {
         String name = tfName.getText();
         String stock = tfStock.getText();
-        String type = tfType.getText();
+        String type = (String) cbExpedition.getValue();
         String price = tfPrice.getText();
         int stock2 = Integer.parseInt(stock);
         int price2 = Integer.parseInt(price);
@@ -147,7 +146,7 @@ public class FXML3EditController implements Initializable {
         
         tfName.setText("");
         tfStock.setText("");
-        tfType.setText("");
+        cbExpedition.setValue("External Expedition");
         tfPrice.setText("");
         
         SaveXML();
@@ -157,7 +156,7 @@ public class FXML3EditController implements Initializable {
     private void clearButtonAction(ActionEvent event) {
         tfName.setText("");
         tfStock.setText("");
-        tfType.setText("");
+        cbExpedition.setValue("External Expedition");
         tfPrice.setText("");
     }
     
@@ -202,6 +201,9 @@ public class FXML3EditController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         OpenXML();
+        
+        cbExpedition.getItems().addAll("External Expedition","JNE","JNT","Tiki","Antareja","SiCepat");
+        cbExpedition.setValue("External Expedition");
         
         tcName.setCellValueFactory(new PropertyValueFactory<>("name"));
         tcStock.setCellValueFactory(new PropertyValueFactory<>("stock"));

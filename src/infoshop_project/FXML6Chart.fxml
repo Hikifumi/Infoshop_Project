@@ -3,7 +3,6 @@
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -19,13 +18,12 @@
          </image>
       </ImageView>
       <Button layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#backButtonAction" prefHeight="26.0" prefWidth="45.0" style="-fx-background-color: ffecec;" text="Back" />
-      <Label layoutX="62.0" layoutY="125.0" text="Income Data">
+      <Label layoutX="62.0" layoutY="125.0" text="Expedition Data:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <PieChart fx:id="pcIncome" layoutX="507.0" layoutY="152.0" prefHeight="385.0" prefWidth="416.0" />
-      <BarChart fx:id="bcIncome" layoutX="36.0" layoutY="153.0" prefHeight="400.0" prefWidth="470.0">
+      <BarChart fx:id="bcIncome" layoutX="36.0" layoutY="153.0" prefHeight="400.0" prefWidth="614.0">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>
@@ -33,5 +31,65 @@
           <NumberAxis side="LEFT" />
         </yAxis>
       </BarChart>
+      <Label layoutX="698.0" layoutY="190.0" text="External Expedition">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="698.0" layoutY="217.0" text="JNE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="698.0" layoutY="244.0" text="JNT">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="698.0" layoutY="271.0" text="Tiki">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="698.0" layoutY="298.0" text="Antareja">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="698.0" layoutY="325.0" text="SiCepat">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lExternal" layoutX="857.0" layoutY="190.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lsicepat" layoutX="857.0" layoutY="325.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lantareja" layoutX="857.0" layoutY="298.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="ltiki" layoutX="857.0" layoutY="271.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="ljnt" layoutX="857.0" layoutY="244.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="ljne" layoutX="857.0" layoutY="217.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
