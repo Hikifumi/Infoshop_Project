@@ -12,9 +12,9 @@
 
 <AnchorPane id="AnchorPane" prefHeight="580.0" prefWidth="960.0" style="-fx-background-color: ffbbbb;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="infoshop_project.FXML6ChartController">
    <children>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="402.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="100.0" fitWidth="150.0" layoutX="430.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@image/Logo%20Infoshop.jpeg" />
+            <Image url="@image/Logo%20Infoshop-crop.jpeg" />
          </image>
       </ImageView>
       <Button layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#backButtonAction" prefHeight="26.0" prefWidth="45.0" style="-fx-background-color: ffecec;" text="Back" />

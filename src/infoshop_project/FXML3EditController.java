@@ -194,7 +194,7 @@ public class FXML3EditController implements Initializable {
     }
     
     public void getData(String d){
-        lSeller.setText("Hi, " + d + "! How are you?");
+        lSeller.setText("Hi, " + d + ". Let's increase sales!");
         System.out.println("getData method is Invoked");
     }
     

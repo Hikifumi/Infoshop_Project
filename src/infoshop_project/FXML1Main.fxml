@@ -9,11 +9,6 @@
 
 <AnchorPane id="AnchorPane" prefHeight="580.0" prefWidth="960.0" style="-fx-background-color: ffbbbb;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="infoshop_project.FXML1MainController">
    <children>
-      <ImageView fitHeight="300.0" fitWidth="400.0" layoutX="327.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@image/Logo%20Infoshop.jpeg" />
-         </image>
-      </ImageView>
       <Label layoutX="284.0" layoutY="341.0" text="Your Business Marketing Information">
          <font>
             <Font size="24.0" />
@@ -24,5 +19,10 @@
             <Font size="24.0" />
          </font>
       </Button>
+      <ImageView fitHeight="218.0" fitWidth="213.0" layoutX="372.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/Logo%20Infoshop-crop.jpeg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

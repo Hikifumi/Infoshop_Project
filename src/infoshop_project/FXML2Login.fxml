@@ -11,9 +11,9 @@
 
 <AnchorPane id="AnchorPane" prefHeight="580.0" prefWidth="960.0" style="-fx-background-color: ffbbbb;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="infoshop_project.FXML2LoginController">
    <children>
-      <ImageView fitHeight="500.0" fitWidth="500.0" layoutX="10.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="400.0" fitWidth="400.0" layoutX="64.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@image/Logo%20Infoshop.jpeg" />
+            <Image url="@image/Logo%20Infoshop-crop.jpeg" />
          </image>
       </ImageView>
       <Label layoutX="604.0" layoutY="191.0" text="Please Login First">

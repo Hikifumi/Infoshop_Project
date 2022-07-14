@@ -13,17 +13,17 @@
 
 <AnchorPane id="AnchorPane" prefHeight="580.0" prefWidth="960.0" style="-fx-background-color: ffbbbb;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="infoshop_project.FXML3EditController">
    <children>
-      <ImageView fitHeight="319.0" fitWidth="334.0" layoutX="18.0" layoutY="250.0" opacity="0.14" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="163.0" fitWidth="214.0" layoutX="71.0" layoutY="362.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@image/Logo%20Infoshop.jpeg" />
+            <Image url="@image/Screenshot%20(574).png" />
          </image>
       </ImageView>
-      <Label fx:id="lSeller" layoutX="56.0" layoutY="14.0" prefHeight="32.0" prefWidth="333.0">
+      <Label fx:id="lSeller" layoutX="77.0" layoutY="19.0" prefHeight="11.0" prefWidth="334.0">
          <font>
-            <Font size="22.0" />
+            <Font size="14.0" />
          </font>
       </Label>
-      <TableView fx:id="tvMerch" layoutX="351.0" layoutY="46.0" onMouseClicked="#tableClick" prefHeight="506.0" prefWidth="579.0" style="-fx-background-color: white;">
+      <TableView fx:id="tvMerch" layoutX="351.0" layoutY="77.0" onMouseClicked="#tableClick" prefHeight="491.0" prefWidth="579.0" style="-fx-background-color: white;">
         <columns>
           <TableColumn fx:id="tcName" prefWidth="263.20001220703125" text="Name" />
           <TableColumn fx:id="tcStock" minWidth="0.0" prefWidth="40.800018310546875" text="Stock" />
@@ -31,67 +31,75 @@
             <TableColumn fx:id="tcPrice" prefWidth="143.1999389648438" text="Price" />
         </columns>
       </TableView>
-      <TextField fx:id="tfName" layoutX="18.0" layoutY="74.0" prefHeight="37.0" prefWidth="303.0" style="-fx-background-color: fbdcdc;">
+      <TextField fx:id="tfName" layoutX="13.0" layoutY="97.0" prefHeight="20.0" prefWidth="303.0" style="-fx-background-color: fbdcdc;">
          <font>
-            <Font size="16.0" />
+            <Font size="14.0" />
          </font>
       </TextField>
-      <TextField fx:id="tfStock" layoutX="18.0" layoutY="204.0" prefHeight="38.0" prefWidth="59.0" style="-fx-background-color: fbdcdc;">
+      <TextField fx:id="tfStock" layoutX="13.0" layoutY="205.0" prefHeight="0.0" prefWidth="59.0" style="-fx-background-color: fbdcdc;">
          <font>
-            <Font size="16.0" />
+            <Font size="14.0" />
          </font>
       </TextField>
-      <TextField fx:id="tfPrice" layoutX="87.0" layoutY="204.0" prefHeight="38.0" prefWidth="233.0" style="-fx-background-color: fbdcdc;">
+      <TextField fx:id="tfPrice" layoutX="82.0" layoutY="205.0" prefHeight="4.0" prefWidth="234.0" style="-fx-background-color: fbdcdc;">
          <font>
-            <Font size="16.0" />
+            <Font size="14.0" />
          </font>
       </TextField>
-      <Button layoutX="112.0" layoutY="315.0" mnemonicParsing="false" onAction="#addtoshelfButton" style="-fx-background-color: ffecec;" text="Add to Shelf">
+      <Button layoutX="41.0" layoutY="342.0" mnemonicParsing="false" onAction="#addtoshelfButton" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: ffecec;" text="Add to Shelf">
          <font>
-            <Font size="16.0" />
+            <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="71.0" layoutY="262.0" mnemonicParsing="false" onAction="#editButtonAction" style="-fx-background-color: ffecec;" text="Edit">
+      <Button layoutX="42.0" layoutY="301.0" mnemonicParsing="false" onAction="#editButtonAction" prefHeight="9.0" prefWidth="67.0" style="-fx-background-color: ffecec;" text="Edit">
          <font>
-            <Font size="16.0" />
+            <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="199.0" layoutY="262.0" mnemonicParsing="false" onAction="#deleteButtonAction" style="-fx-background-color: ffecec;" text="Delete">
+      <Button layoutX="227.0" layoutY="301.0" mnemonicParsing="false" onAction="#deleteButtonAction" prefHeight="1.0" prefWidth="59.0" style="-fx-background-color: ffecec;" text="Delete">
          <font>
-            <Font size="16.0" />
+            <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="94.0" layoutY="507.0" mnemonicParsing="false" onAction="#incomeButtonAction" style="-fx-background-color: ffecec;" text="Expedition Graph">
+      <Button layoutX="41.0" layoutY="525.0" mnemonicParsing="false" onAction="#incomeButtonAction" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: ffecec;" text="Expedition Graph">
          <font>
-            <Font size="16.0" />
+            <Font size="14.0" />
          </font>
       </Button>
-      <Label layoutX="18.0" layoutY="46.0" text="Merchandise Name:">
+      <Label layoutX="14.0" layoutY="77.0" text="Merchandise Name:">
          <font>
-            <Font size="18.0" />
+            <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="18.0" layoutY="112.0" text="Expedition:">
+      <Label layoutX="14.0" layoutY="130.0" text="Expedition:">
          <font>
-            <Font size="18.0" />
+            <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="18.0" layoutY="177.0" text="Stock:">
+      <Label layoutX="13.0" layoutY="185.0" text="Stock:">
          <font>
-            <Font size="18.0" />
+            <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="87.0" layoutY="177.0" text="Price:">
+      <Label layoutX="84.0" layoutY="185.0" text="Price:">
          <font>
-            <Font size="18.0" />
+            <Font size="14.0" />
          </font>
       </Label>
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#exitButtonAction" style="-fx-background-color: ffecec;" text="Exit" />
-      <Button layoutX="130.0" layoutY="262.0" mnemonicParsing="false" onAction="#clearButtonAction" style="-fx-background-color: ffecec;" text="Clear">
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#exitButtonAction" prefHeight="7.0" prefWidth="58.0" style="-fx-background-color: ffecec;" text="Exit">
          <font>
-            <Font size="16.0" />
+            <Font size="14.0" />
+         </font></Button>
+      <Button layoutX="132.0" layoutY="301.0" mnemonicParsing="false" onAction="#clearButtonAction" prefHeight="7.0" prefWidth="67.0" style="-fx-background-color: ffecec;" text="Clear">
+         <font>
+            <Font size="14.0" />
          </font>
       </Button>
-      <ChoiceBox fx:id="cbExpedition" layoutX="17.0" layoutY="139.0" prefHeight="38.0" prefWidth="303.0" style="-fx-background-color: fbdcdc;" />
+      <ChoiceBox fx:id="cbExpedition" layoutX="13.0" layoutY="150.0" prefHeight="32.0" prefWidth="303.0" style="-fx-background-color: fbdcdc;" />
+      <ImageView fitHeight="58.0" fitWidth="59.0" layoutX="612.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/Logo%20Infoshop-crop.jpeg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
