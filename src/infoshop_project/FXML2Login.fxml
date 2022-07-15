@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="580.0" prefWidth="960.0" style="-fx-background-color: ffbbbb;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="infoshop_project.FXML2LoginController">
+<AnchorPane id="AnchorPane" prefHeight="580.0" prefWidth="960.0" style="-fx-background-color: ffbbbb;" stylesheets="@FXML2Login.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="infoshop_project.FXML2LoginController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="400.0" layoutX="64.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -21,7 +21,7 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <TextField fx:id="tfUsername" layoutX="554.0" layoutY="243.0" promptText="Username" style="-fx-background-color: ffecec;">
+      <TextField fx:id="tfUsername" layoutX="552.0" layoutY="243.0" promptText="Username" style="-fx-background-color: ffecec;" styleClass="textField" stylesheets="@FXML2Login.css">
          <font>
             <Font size="22.0" />
          </font>
@@ -31,7 +31,7 @@
             <Font size="22.0" />
          </font>
       </PasswordField>
-      <Button layoutX="654.0" layoutY="379.0" mnemonicParsing="false" onAction="#loginButtonAction" style="-fx-background-color: ffecec;" text="Login">
+      <Button layoutX="654.0" layoutY="379.0" mnemonicParsing="false" onAction="#loginButtonAction" styleClass="button-continue" stylesheets="@FXML2Login.css" text="Login">
          <font>
             <Font size="18.0" />
          </font>

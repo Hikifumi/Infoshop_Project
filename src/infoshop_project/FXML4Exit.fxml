@@ -19,7 +19,7 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <Button layoutX="563.0" layoutY="284.0" mnemonicParsing="false" onAction="#yesButtonAction" style="-fx-background-color: ffecec;" text="Yes, I have Finished my work">
+      <Button layoutX="563.0" layoutY="284.0" mnemonicParsing="false" onAction="#yesButtonAction" styleClass="button-continue" stylesheets="@FXML4Exit.css" text="Yes, I have Finished my work">
          <font>
             <Font size="18.0" />
          </font>
@@ -29,7 +29,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="563.0" layoutY="337.0" mnemonicParsing="false" onAction="#noButtonAction" style="-fx-background-color: ffecec;" text="No, Let me back to work">
+      <Button layoutX="563.0" layoutY="337.0" mnemonicParsing="false" onAction="#noButtonAction" styleClass="button-continue" stylesheets="@FXML4Exit.css" text="No, Let me back to work">
          <font>
             <Font size="18.0" />
          </font>

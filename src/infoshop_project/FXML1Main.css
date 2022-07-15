@@ -1,0 +1,22 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jul 16, 2022, 12:01:37 AM
+    Author     : TUF-GK
+*/
+.button-continue{
+    -fx-background-color:  #ffecec;
+    -fx-text-fill: black;
+}
+
+.button-continue:hover{
+    -fx-background-color:  black;
+    -fx-text-fill: #ffecec;
+}
+
+.button-continue:pressed{
+    -fx-background-color:  #ffecec;
+    -fx-text-fill: black;
+}

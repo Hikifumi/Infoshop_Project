@@ -14,7 +14,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button layoutX="343.0" layoutY="403.0" mnemonicParsing="false" onAction="#continueButtonAction" style="-fx-background-color: ffecec;" text="Click Here to Continue">
+      <Button layoutX="343.0" layoutY="403.0" mnemonicParsing="false" onAction="#continueButtonAction" styleClass="button-continue" stylesheets="@FXML1Main.css" text="Click Here to Continue">
          <font>
             <Font size="24.0" />
          </font>

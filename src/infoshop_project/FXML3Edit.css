@@ -1,0 +1,52 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jul 16, 2022, 12:02:16 AM
+    Author     : TUF-GK
+*/
+
+.button-continue{
+    -fx-background-color:  #ffecec;
+    -fx-text-fill: black;
+}
+
+.button-continue:hover{
+    -fx-background-color:  black;
+    -fx-text-fill: #ffecec;
+}
+
+.button-continue:pressed{
+    -fx-background-color:  #ffecec;
+    -fx-text-fill: black;
+}
+
+.table-view{
+    -fx-background-color: transparent;
+}
+.table-view:focused{
+    -fx-background-color: transparent;
+}
+.table-view .column-header-background{
+    -fx-background-color: #ffcece;
+}
+
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: black;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+.table-row-cell:hover{
+    -fx-background-color: black;
+    -fx-text-background-color: white;
+}
+.table-row-cell:odd{
+    -fx-background-color: #ffdcdc;
+}
+.table-row-cell:even{
+    -fx-background-color: #ffcece;
+}

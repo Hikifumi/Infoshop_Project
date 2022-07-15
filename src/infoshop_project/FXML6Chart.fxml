@@ -17,13 +17,13 @@
             <Image url="@image/Logo%20Infoshop-crop.jpeg" />
          </image>
       </ImageView>
-      <Button layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#backButtonAction" prefHeight="26.0" prefWidth="45.0" style="-fx-background-color: ffecec;" text="Back" />
+      <Button layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#backButtonAction" prefHeight="26.0" prefWidth="45.0" styleClass="button-continue" stylesheets="@FXML6Chart.css" text="Back" />
       <Label layoutX="62.0" layoutY="125.0" text="Expedition Data:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <BarChart fx:id="bcIncome" layoutX="36.0" layoutY="153.0" prefHeight="400.0" prefWidth="614.0">
+      <BarChart fx:id="bcIncome" layoutX="36.0" layoutY="153.0" prefHeight="400.0" prefWidth="614.0" stylesheets="@FXML6Chart.css">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>
