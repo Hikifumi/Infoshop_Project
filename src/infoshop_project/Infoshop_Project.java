@@ -1,7 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXML.java to edit this template
- */
+//    Group 1 (Server Class)
+//    Member:
+//    Chrisna Maulana Fatchurrochim (21523265)
+//    Diva Ivani Arista Pangastuti (21523217)
+//    Muhammad Farhan Machdi (21523072)
+//    Naufal Ardiyanto (21523196)
+    
+//    Username: Admin
+//    Password: 123
+
 package infoshop_project;
 
 import javafx.application.Application;
@@ -10,10 +16,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-/**
- *
- * @author TUF-GK
- */
 public class Infoshop_Project extends Application {
     
     @Override
@@ -27,9 +29,6 @@ public class Infoshop_Project extends Application {
         stage.show();
     }
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         launch(args);
     }

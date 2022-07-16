@@ -102,7 +102,7 @@ public class FXML3EditController implements Initializable {
     }
     
     @FXML
-    private void addtoshelfButton(ActionEvent event){
+    private void addtoshelfButton(ActionEvent event) throws NullPointerException{
         String name = tfName.getText();
         String stock = tfStock.getText();
         String type = (String) cbExpedition.getValue();
@@ -130,7 +130,7 @@ public class FXML3EditController implements Initializable {
     }
     
     @FXML
-    private void editButtonAction(ActionEvent event) {
+    private void editButtonAction(ActionEvent event) throws NullPointerException{
         String name = tfName.getText();
         String stock = tfStock.getText();
         String type = (String) cbExpedition.getValue();
@@ -161,7 +161,7 @@ public class FXML3EditController implements Initializable {
     }
     
     @FXML
-    private void deleteButtonAction(ActionEvent event) {
+    private void deleteButtonAction(ActionEvent event) throws NullPointerException {
         int pick = tvMerch.getSelectionModel().getSelectedIndex();
         if (pick >= 0){
             tvMerch.getItems().remove(pick);
@@ -176,9 +176,9 @@ public class FXML3EditController implements Initializable {
         
         Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
-        stage.setTitle("Income Chart");
+        stage.setTitle("Expedition Chart");
         stage.show();
-        System.out.println("Charrt Penghasilan");
+        System.out.println("Chart Expedition");
     }
     
     @FXML
